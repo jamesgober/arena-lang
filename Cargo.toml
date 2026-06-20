@@ -19,10 +19,10 @@ readme = "README.md"
 description = "Typed bump/arena allocation for AST and IR nodes with stable addresses."
 
 # Keywords (5 max)
-keywords = [compiler,language,arena,allocator]
+keywords = ["compiler", "language", "arena", "allocator"]
 
 # Categories
-categories = [development-tools,memory-management]
+categories = ["development-tools", "memory-management"]
 
 # Links
 homepage      = "https://github.com/jamesgober/arena-lang"

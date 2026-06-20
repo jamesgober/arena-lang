@@ -18,7 +18,7 @@
 
 <div align="left">
     <p>
-        arena-lang is the BASE-tier crate that follows: A typed-arena layer over arena-lib giving ast-lang stable, non-moving node addresses. Part of the -lang language-construction family; see _strategy/LANG_COLLECTION.md for the master plan.
+        arena-lang is a typed bump allocator for compiler tree nodes. It hands a node's storage out of a contiguous chunk, returns a stable handle that never moves for the life of the arena, and frees everything at once when the arena is dropped. It is the allocation substrate beneath the AST and IR: nodes are allocated forward, their addresses stay put as the arena grows, and there is no per-node deallocation to track.
     </p>
     <br>
     <hr>
