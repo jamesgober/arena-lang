@@ -47,4 +47,4 @@ arena-lang is a typed bump allocator for compiler tree nodes. It hands out a nod
 - Two distinct allocations return two distinct, non-aliasing handles; no two live nodes share storage.
 - `get(alloc(node)) == &node` for every node the arena accepts — round-trip fidelity, property-tested against a reference arena.
 - A handle is small and `Copy`; passing one is never more expensive than passing an integer index.
-- Capacity exhaustion is reported as a defined error, never a silent wrap or a panic; resolving a handle never reads outside the arena's storage.
+- Capacity exhaustion at the `u32` slot ceiling is reported through `try_alloc` as a defined error, never a silent wrap; the convenience `alloc` documents that ceiling as its sole panic condition, matching `Vec::push`. Resolving a handle never reads outside the arena's storage.

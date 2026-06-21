@@ -9,12 +9,14 @@
 Compiles, CI green, structure correct, no domain logic.
 - [x] Manifest, README, CHANGELOG, REPS, dual license, CI, deny, clippy, rustfmt.
 
-## v0.2.0 - Core (THE HARD PART, NOT DEFERRED)
-A typed-arena layer over arena-lib giving ast-lang stable, non-moving node addresses.
-Dependencies (wraps the existing arena-lib) are wired here, when first used.
+## v0.2.0 - Core (THE HARD PART, NOT DEFERRED) (DONE)
+A typed, append-only arena giving ast-lang stable, non-moving node addresses: a
+contiguous store handing back a four-byte `Id<T>` that survives growth, with a
+bounded capacity and a defined exhaustion error. Built with zero first-party
+dependencies on safe Rust (`#![forbid(unsafe_code)]`).
 Exit criteria:
-- [ ] Every public item has rustdoc + a runnable example.
-- [ ] Core invariants property-tested (full DIRECTIVES + API authored at this stage).
+- [x] Every public item has rustdoc + a runnable example.
+- [x] Core invariants property-tested against a `Vec`-backed reference arena (full DIRECTIVES + API authored at this stage).
 
 ## v1.0.0 - API freeze
 Public surface stable and frozen until 2.0.
