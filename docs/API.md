@@ -1,8 +1,10 @@
 # arena-lang &mdash; API Reference
 
 > Complete reference for every public item in `arena-lang`, with examples.
-> **Status: pre-1.0.** The surface below is implemented and stable within the 0.x
-> series; it is frozen at `1.0.0`. See [`dev/ROADMAP.md`](../dev/ROADMAP.md).
+> **Status: stable (1.0).** The surface below is frozen under
+> [Semantic Versioning](https://semver.org): within the `1.x` series no public item
+> is removed or changed incompatibly. New items may still arrive as minor releases;
+> any breaking change waits for `2.0`. See [`dev/ROADMAP.md`](../dev/ROADMAP.md).
 
 ## Table of Contents
 
@@ -46,7 +48,7 @@ traversal, no parsing.
 
 ```toml
 [dependencies]
-arena-lang = "0.2"
+arena-lang = "1"
 ```
 
 Or from the terminal:
@@ -427,13 +429,12 @@ assert_eq!(
 | Feature | Default | Description |
 |---------|---------|-------------|
 | `std`   | yes     | Links the standard library. The crate needs only `alloc`, so this is opt-out: disabling it compiles `arena-lang` under `#![no_std]` with no loss of function. |
-| `serde` | no      | Reserved for serialising arena contents. The hook is declared; the derives land in a later phase, so enabling it today has no effect on the public API. |
 
 Disabling `std` keeps the crate `no_std`:
 
 ```toml
 [dependencies]
-arena-lang = { version = "0.2", default-features = false }
+arena-lang = { version = "1", default-features = false }
 ```
 
 ---

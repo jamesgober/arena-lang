@@ -26,7 +26,7 @@
         <strong>MSRV is 1.85+</strong> (Rust 2024 edition).
     </p>
     <blockquote>
-        <strong>Status: pre-1.0, in active development.</strong> The public API is being designed across the 0.x series and frozen at <code>1.0.0</code>. See <a href="./CHANGELOG.md"><code>CHANGELOG.md</code></a>.
+        <strong>Status: stable.</strong> The public API is frozen at <code>1.0.0</code> under Semantic Versioning &mdash; no breaking change before <code>2.0</code>. See <a href="./CHANGELOG.md"><code>CHANGELOG.md</code></a>.
     </blockquote>
 </div>
 
@@ -37,7 +37,7 @@
 
 ```toml
 [dependencies]
-arena-lang = "0.2"
+arena-lang = "1"
 ```
 
 Or from the terminal:
@@ -123,11 +123,12 @@ values; overrunning it is a defined <code>ArenaError</code>, never a silent wrap
 
 ## Status
 
-<code>v0.2.0</code> implements the core: the typed <code>Arena&lt;T&gt;</code>, the
-<code>Copy</code> <code>Id&lt;T&gt;</code> handle, and the fallible
-<code>try_alloc</code> path — each invariant property-tested against a
-<code>Vec</code>-backed reference arena. The public API is frozen at
-<code>1.0.0</code>; see the <a href="./dev/ROADMAP.md"><code>ROADMAP</code></a>.
+<code>v1.0.0</code> &mdash; <strong>stable.</strong> The full surface is in place: the
+typed <code>Arena&lt;T&gt;</code>, the four-byte <code>Copy</code>
+<code>Id&lt;T&gt;</code> handle, and the fallible <code>try_alloc</code> path, each
+invariant property-tested against a <code>Vec</code>-backed reference arena. The
+public API is frozen under Semantic Versioning &mdash; no breaking change before
+<code>2.0</code>; see the <a href="./dev/ROADMAP.md"><code>ROADMAP</code></a>.
 
 <hr>
 <br>

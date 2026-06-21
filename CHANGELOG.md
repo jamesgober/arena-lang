@@ -21,6 +21,25 @@
 
 ---
 
+## [1.0.0] - 2026-06-20
+
+API freeze. The public surface — `Arena<T>`, `Id<T>`, and `ArenaError` — is stable and
+frozen under Semantic Versioning: no breaking change before `2.0`. No functional
+change from `0.2.0`; this release records the stability promise and trims the surface
+to exactly what it commits to.
+
+### Changed
+
+- `docs/API.md` marked stable, with the SemVer promise recorded.
+
+### Removed
+
+- The no-op `serde` feature and its optional dependency. It was a reserved stub that
+  derived nothing; rather than freeze a dead feature flag into the `1.x` contract, it
+  is removed. `serde` support can return as an additive minor release if needed.
+
+---
+
 ## [0.2.0] - 2026-06-20
 
 The core: a typed, append-only arena that hands out stable `Copy` handles for AST and
@@ -67,6 +86,7 @@ Initial scaffold and repository bootstrap. No domain logic yet &mdash; this rele
 - `.github/workflows/ci.yml` CI matrix; `deny.toml`, `clippy.toml`, `rustfmt.toml`.
 - `dev/DIRECTIVES.md` and `dev/ROADMAP.md` (committed engineering standards + plan).
 
-[Unreleased]: https://github.com/jamesgober/arena-lang/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/jamesgober/arena-lang/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/jamesgober/arena-lang/compare/v0.2.0...v1.0.0
 [0.2.0]: https://github.com/jamesgober/arena-lang/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/jamesgober/arena-lang/releases/tag/v0.1.0
